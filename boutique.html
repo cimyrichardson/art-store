@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Introuvable - 404</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073; }
+            to { text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6, 0 0 40px #ff4da6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 min-h-screen flex items-center justify-center text-white">
+    <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <!-- Animation 404 -->
+            <div class="relative mb-12">
+                <div class="floating text-9xl font-bold mb-4 glow">
+                    4<i class="fas fa-question-circle text-yellow-300"></i>4
+                </div>
+                <div class="absolute -bottom-2 left-0 right-0 h-2 bg-white/20 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 animate-pulse"></div>
+                </div>
+            </div>
+            
+            <!-- Message principal -->
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Oups ! Page introuvable</h1>
+            <p class="text-xl mb-8 opacity-90">
+                Il semble que la page que vous cherchez a disparu dans l'univers numérique.
+                <br>
+                Peut-être qu'elle s'est égarée ou n'a jamais existé...
+            </p>
+            
+            <!-- Bouton de retour -->
+            <div class="group">
+                <a href="index.html" class="inline-block px-8 py-4 bg-white/10 backdrop-blur-md rounded-full border-2 border-white/20 hover:border-white/40 transition-all duration-300 group-hover:scale-105">
+                    <span class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-arrow-left-long group-hover:-translate-x-1 transition-transform duration-300"></i>
+                        <span>Retour à l'accueil</span>
+                    </span>
+                </a>
+            </div>
+            
+            <!-- Animation supplémentaire -->
+            <div class="mt-16 grid grid-cols-3 gap-4 max-w-md mx-auto">
+                <div class="h-4 bg-white/10 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="h-4 bg-white/10 rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
+                <div class="h-4 bg-white/10 rounded-full animate-bounce" style="animation-delay: 0.5s"></div>
+            </div>
+            
+            <!-- Message secondaire -->
+            <p class="mt-12 text-sm opacity-70">
+                Code d'erreur : 404 | 
+                <button id="funBtn" class="underline hover:text-yellow-300 transition-colors">
+                    Cliquez ici pour un peu de magie
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('funBtn').addEventListener('click', function() {
+            const colors = ['from-red-500', 'from-yellow-500', 'from-green-500', 'from-blue-500', 'from-indigo-500', 'from-purple-500', 'from-pink-500'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.body.className = `bg-gradient-to-br ${randomColor} via-purple-900 to-pink-800 min-h-screen flex items-center justify-center text-white`;
+            
+            // Ajout d'une petite animation de confettis
+            const confetti = document.createElement('div');
+            confetti.innerHTML = `
+                <div class="fixed inset-0 overflow-hidden pointer-events-none">
+                    ${Array(30).fill().map((_, i) => `
+                        <div class="absolute w-2 h-2 rounded-full" style="
+                            background-color: hsl(${Math.random() * 360}, 100%, 50%);
+                            left: ${Math.random() * 100}%;
+                            top: -10px;
+                            animation: fall ${Math.random() * 3 + 2}s linear forwards;
+                            animation-delay: ${Math.random() * 0.5}s;
+                        "></div>
+                    `).join('')}
+                </div>
+                <style>
+                    @keyframes fall {
+                        to { transform: translateY(100vh) rotate(${Math.random() * 360}deg); }
+                    }
+                </style>
+            `;
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
