@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Art-Store</title>
+    <meta name="description" content="Contactez Art-Store pour plus d'informations sur nos services ou pour passer une commande.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="Assets/Img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Art-Store Logo">
+                <span>Art-Store</span>
+            </a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Nos services</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Bannière de page -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            <p>Nous sommes à votre écoute pour répondre à toutes vos questions</p>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-info">
+                <h2>Coordonnées</h2>
+                <p>N'hésitez pas à nous contacter par téléphone, email ou via nos réseaux sociaux. Notre équipe se fera un plaisir de vous répondre dans les plus brefs délais.</p>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Téléphone</h3>
+                        <p>+123 456 7890</p>
+                        <a href="tel:+1234567890" class="btn btn-outline">Appeler maintenant</a>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>contact@art-store.com</p>
+                        <a href="mailto:contact@art-store.com" class="btn btn-outline">Envoyer un email</a>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Adresse</h3>
+                        <p>123 Rue de l'Innovation<br>75000 Paris, France</p>
+                        <a href="https://maps.google.com" class="btn btn-outline">Voir sur la carte</a>
+                    </div>
+                </div>
+                
+                <div class="social-contact">
+                    <h3>Réseaux sociaux</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="#" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Envoyez-nous un message</h2>
+                <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone (optionnel)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service intéressé</label>
+                        <select id="service" name="service">
+                            <option value="">Sélectionnez un service</option>
+                            <option value="wise">Carte Wise</option>
+                            <option value="streaming">Abonnement Streaming</option>
+                            <option value="photo">Photographie Professionnelle</option>
+                            <option value="shopping">Achat & Livraison</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+                <div id="formSuccess" class="form-success">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Merci ! Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ rapide -->
+    <section class="quick-faq">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Quels sont vos horaires d'ouverture ?</h3>
+                    <p>Nous sommes disponibles du lundi au vendredi de 9h à 18h, et le samedi de 10h à 15h. Pour les urgences en dehors de ces horaires, vous pouvez nous contacter via WhatsApp.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quel est le délai pour la création d'une carte Wise ?</h3>
+                    <p>Le processus complet prend généralement 3 à 5 jours ouvrables après réception de tous les documents nécessaires.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Comment commander un shooting photo ?</h3>
+                    <p>Contactez-nous via le formulaire ou par téléphone pour discuter de vos besoins. Nous planifierons ensuite une séance selon votre disponibilité.</p>
+                </div>
+            </div>
+            <div class="faq-cta">
+                <a href="faq.html" class="btn btn-outline">Voir toutes les questions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Art-Store</h3>
+                    <p>Innovation, Créativité, Service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#wise"><i class="fas fa-credit-card"></i> Cartes Wise</a></li>
+                        <li><a href="services.html#streaming"><i class="fas fa-film"></i> Abonnements Streaming</a></li>
+                        <li><a href="services.html#photo"><i class="fas fa-camera"></i> Photographie Professionnelle</a></li>
+                        <li><a href="services.html#shopping"><i class="fas fa-shopping-bag"></i> Achat & Livraison</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> contact@art-store.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ville, Pays</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    &copy; <span id="year"></span> 
+                        Art-Store. Tous droits réservés. <br> 
+                        <a href="" target="_blank">
+                                - <strong>TechWithRichardson</strong>
+                        </a>
+                </p>
+                <script>
+                    document.getElementById("year").textContent = new Date().getFullYear();
+                </script>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton Retour en haut -->
+    <button id="backToTop" class="back-to-top" aria-label="Retour en haut de page">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Bouton Retour en haut
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('backToTop');
+
+            if (backToTopButton) {
+                window.addEventListener('scroll', function () {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('visible');
+                    } else {
+                        backToTopButton.classList.remove('visible');
+                    }
+                });
+
+                backToTopButton.addEventListener('click', function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

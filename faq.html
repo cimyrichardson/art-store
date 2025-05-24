@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Art-Store</title>
+    <meta name="description"
+        content="Trouvez des réponses aux questions fréquemment posées sur les services d'Art-Store.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="Assets/Img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Barre de navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Art-Store Logo">
+                <span>Art-Store</span>
+            </a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Nos services</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Bannière de page -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Foire aux questions</h1>
+            <p>Trouvez des réponses à vos questions sur nos services</p>
+        </div>
+    </section>
+    <!-- Section FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-category">
+                <button class="category-btn active" data-category="all">Toutes les questions</button>
+                <button class="category-btn" data-category="wise">Cartes Wise</button>
+                <button class="category-btn" data-category="streaming">Abonnements</button>
+                <button class="category-btn" data-category="photo">Photographie</button>
+                <button class="category-btn" data-category="shopping">Achat/Livraison</button>
+                <button class="category-btn" data-category="general">Général</button>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- Question 1 -->
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <h3>Quels sont vos horaires d'ouverture ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous sommes disponibles du lundi au vendredi de 9h à 18h, et le samedi de 10h à 15h. Pour les
+                            urgences en dehors de ces horaires, vous pouvez nous contacter via WhatsApp qui est
+                            disponible 24h/24.</p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item" data-category="wise">
+                    <div class="faq-question">
+                        <h3>Quel est le délai pour la création d'une carte Wise ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Le processus complet prend généralement 3 à 5 jours ouvrables après réception de tous les
+                            documents nécessaires. Ce délai inclut la vérification d'identité, la configuration du
+                            compte et l'activation de la carte.</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item" data-category="streaming">
+                    <div class="faq-question">
+                        <h3>Comment fonctionne le service d'abonnement streaming ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous payons l'abonnement pour vous et vous fournissons les identifiants d'un compte premium.
+                            Vous bénéficiez ainsi du service sans avoir à gérer le paiement. Les abonnements sont
+                            généralement renouvelés automatiquement chaque mois.</p>
+                    </div>
+                </div>
+                <!-- Question 4 -->
+                <div class="faq-item" data-category="photo">
+                    <div class="faq-question">
+                        <h3>Comment commander un shooting photo ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Contactez-nous via le formulaire de contact ou par téléphone pour discuter de vos besoins
+                            (type de shooting, lieu, durée, etc.). Nous vous proposerons ensuite un devis et
+                            planifierons une séance selon votre disponibilité. Un acompte est généralement requis pour
+                            confirmer la réservation.</p>
+                    </div>
+                </div>
+                <!-- Question 5 -->
+                <div class="faq-item" data-category="shopping">
+                    <div class="faq-question">
+                        <h3>Quels sont les frais pour le service d'achat et livraison ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nos frais dépendent de la valeur et du poids des articles commandés, ainsi que de la
+                            destination de livraison. En général, les frais de service commencent à 10€ pour les petites
+                            commandes. Nous fournissons toujours un devis détaillé avant toute commande.</p>
+                    </div>
+                </div>
+                <!-- Question 6 -->
+                <div class="faq-item" data-category="wise">
+                    <div class="faq-question">
+                        <h3>Quels documents sont nécessaires pour une carte Wise ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous avons besoin d'une copie de votre pièce d'identité (passeport ou carte d'identité),
+                            d'une preuve d'adresse récente (moins de 3 mois) et parfois d'un justificatif de revenus
+                            selon le type de compte souhaité. Tous les documents sont traités de manière sécurisée et
+                            confidentielle.</p>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="faq-item" data-category="streaming">
+                    <div class="faq-question">
+                        <h3>Que se passe-t-il si mon abonnement streaming est interrompu ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>En cas d'interruption de service, contactez-nous immédiatement. Nous résoudrons généralement
+                            le problème dans les 24 heures. Notre garantie inclut le remplacement gratuit du compte en
+                            cas de problème persistant.</p>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="faq-item" data-category="photo">
+                    <div class="faq-question">
+                        <h3>Quand recevrai-je mes photos après un shooting ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Les photos retouchées sont généralement livrées dans un délai de 7 à 14 jours ouvrables après
+                            la séance, selon la complexité du travail et notre charge actuelle. Nous pouvons fournir
+                            quelques "sneak peeks" avant la livraison finale sur demande.</p>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="faq-item" data-category="shopping">
+                    <div class="faq-question">
+                        <h3>Puis-je suivre ma commande ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, nous fournissons un numéro de suivi dès que la commande est expédiée. Vous recevrez
+                            également des mises à jour régulières sur l'état de votre colis jusqu'à sa livraison.</p>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <h3>Quels sont vos modes de paiement acceptés ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous acceptons les virements bancaires, les transferts via Wise, PayPal et les paiements en
+                            espèces pour certaines prestations. Les moyens de paiement disponibles peuvent varier selon
+                            le service choisi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <p>Vous ne trouvez pas réponse à votre question ?</p>
+                <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Art-Store</h3>
+                    <p>Innovation, Créativité, Service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#wise"><i class="fas fa-credit-card"></i> Cartes Wise</a></li>
+                        <li><a href="services.html#streaming"><i class="fas fa-film"></i> Abonnements Streaming</a></li>
+                        <li><a href="services.html#photo"><i class="fas fa-camera"></i> Photographie Professionnelle</a>
+                        </li>
+                        <li><a href="services.html#shopping"><i class="fas fa-shopping-bag"></i> Achat & Livraison</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> contact@art-store.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ville, Pays</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    &copy; <span id="year"></span>
+                    Art-Store. Tous droits réservés. <br>
+                    <a href="" target="_blank">
+                        - <strong>TechWithRichardson</strong>
+                    </a>
+                </p>
+                <script>
+                    document.getElementById("year").textContent = new Date().getFullYear();
+                </script>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton Retour en haut -->
+    <button id="backToTop" class="back-to-top" aria-label="Retour en haut de page">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // FAQ Accordéon
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+
+                // Ferme les autres items
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.parentElement.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Filtrage FAQ par catégorie
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Retire la classe active de tous les boutons
+                categoryBtns.forEach(btn => btn.classList.remove('active'));
+                // Ajoute la classe active au bouton cliqué
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-category');
+
+                faqItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+
+                    if (filter === 'all' || itemCategory === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Bouton Retour en haut
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('backToTop');
+
+            if (backToTopButton) {
+                window.addEventListener('scroll', function () {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('visible');
+                    } else {
+                        backToTopButton.classList.remove('visible');
+                    }
+                });
+
+                backToTopButton.addEventListener('click', function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
