@@ -45,3 +45,47 @@ passport.deserializeUser(async (id, done) => {
 });
 
 module.exports = passport;
+
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+require('dotenv').config();
+
+// Générer un token JWT
+function generateToken(userId) {
+  return jwt.sign(
+    { id: userId },
+    process.env.JWT_SECRET,
+    { expiresIn: '30d' }
+  );
+}
+
+// Middleware pour vérifier le token
+function verifyToken(req, res, next) {
+  const token = req.header('Authorization')?.replace('Bearer ', '');
+  
+  if (!token) {
+    return res.status(401).json({ success: false, message: 'Accès non autorisé' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    res.status(401).json({ success: false, message: 'Token invalide' });
+  }
+}
+
+// Middleware pour vérifier le rôle admin
+function adminRequired(req, res, next) {
+  if (req.user.role !== 'admin') {
+    return res.status(403).json({ success: false, message: 'Accès refusé' });
+  }
+  next();
+}
+
+module.exports = {
+  generateToken,
+  verifyToken,
+  adminRequired
+};
