@@ -1,52 +1,57 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const passport = require("passport");
-const User = require("../models/User");
+const authController = require('../controllers/authController');
+const { verifyToken } = require('../utils/auth');
 
-// Inscription
-router.post("/register", async (req, res, next) => {
-  try {
-    const { username, email, password } = req.body;
+/**
+ * @route POST /api/auth/register
+ * @description Enregistre un nouvel utilisateur
+ * @access Public
+ * @param {string} username - Nom d'utilisateur
+ * @param {string} email - Email valide
+ * @param {string} password - Mot de passe (min 6 caractères)
+ */
+router.post('/register', authController.register);
 
-    // Validation simple
-    if (!username || !email || !password) {
-      return res.status(400).json({ message: "Tous les champs sont requis" });
-    }
+/**
+ * @route POST /api/auth/login
+ * @description Connecte un utilisateur
+ * @access Public
+ * @param {string} email - Email enregistré
+ * @param {string} password - Mot de passe correspondant
+ */
+router.post('/login', authController.login);
 
-    const existingUser = await User.findByEmail(email);
-    if (existingUser) {
-      return res.status(400).json({ message: "Cet email est déjà utilisé" });
-    }
+/**
+ * @route GET /api/auth/profile
+ * @description Récupère le profil de l'utilisateur connecté
+ * @access Private
+ */
+router.get('/profile', verifyToken, authController.getUserProfile);
 
-    const userId = await User.create({ username, email, password });
-    res.status(201).json({ message: "Utilisateur créé avec succès", userId });
-  } catch (err) {
-    next(err);
-  }
-});
+/**
+ * @route POST /api/auth/logout
+ * @description Déconnecte l'utilisateur
+ * @access Private
+ */
+router.post('/logout', verifyToken, authController.logout);
 
-// Connexion
-router.post("/login", (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
-    if (err) return next(err);
-    if (!user) {
-      return res.status(401).json({ message: info.message });
-    }
-    req.logIn(user, (err) => {
-      if (err) return next(err);
-      return res.json({
-        message: "Connexion réussie",
-        user: { id: user.user_id, username: user.username, role: user.role },
-      });
-    });
-  })(req, res, next);
-});
+/**
+ * @route PUT /api/auth/update
+ * @description Met à jour le profil utilisateur
+ * @access Private
+ * @param {string} [username] - Nouveau nom d'utilisateur
+ * @param {string} [email] - Nouvel email
+ */
+router.put('/update', verifyToken, authController.updateProfile);
 
-// Déconnexion
-router.post("/logout", (req, res) => {
-  req.logout(() => {
-    res.json({ message: "Déconnexion réussie" });
-  });
-});
+/**
+ * @route PUT /api/auth/change-password
+ * @description Change le mot de passe de l'utilisateur
+ * @access Private
+ * @param {string} currentPassword - Mot de passe actuel
+ * @param {string} newPassword - Nouveau mot de passe
+ */
+router.put('/change-password', verifyToken, authController.changePassword);
 
 module.exports = router;
